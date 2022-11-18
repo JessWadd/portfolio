@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <title>Jess Waddell Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -13,7 +15,7 @@
 
 <!-- NAV BAR -->
 
-<nav id="navbar" class="nav">
+<nav id="navbar" class="navbar">
   <ul class="nav-list">
     <li>
       <a href="#welcome-section">&#129414;</a>
@@ -35,8 +37,8 @@
 <!-- ABOUT -->
 
 <section id="welcome-section" class="welcome-section">
-  <h1>Jess Waddell</h1>
-  <p>teacher gone tech</p>
+  <h1 id="welcome-name">Jess Waddell</h1>
+  <p id="welcome-phrase">teacher gone tech</p>
 
   <div class="girl">
     <div class="head">
@@ -49,6 +51,8 @@
       <div class="eyes right">
         <div class="eyelid"></div>
       </div>
+      <div class="glasses left"></div>
+      <div class="glasses right"></div>
       <div class="blush left"></div>
       <div class="blush right"></div>
       <div class="mouth"></div>
@@ -59,9 +63,24 @@
       <div class="leg right"></div>
       <div class="foot left"></div>
       <div class="foot right"></div>
+      <img class="heart-solid" src="heart-solid.png" />
+      <img class="heart-pixel" src="pixel-heart.png" />
     </div>
-    <div class="heart"></div>
-    <div class="people-laptop"></div>
+    <div class="object" id="hover-hide">
+      <div class="paper-head left"></div>
+      <div class="paper-head midleft"></div>
+      <div class="paper-head center"></div>
+      <div class="paper-head midright"></div>
+      <div class="paper-head right"></div>
+      <div class="paper-body left"></div>
+      <div class="paper-body midleft"></div>
+      <div class="paper-body center"></div>
+      <div class="paper-body midright"></div>
+      <div class="paper-body right"></div>
+    </div>
+    <div class="object" id="hover-show">
+      <img class="laptop" src="laptop-solid.svg" />
+    </div>
   </div>
 </section>
 
@@ -73,19 +92,21 @@
 
 <h2>Projects</h2>
 
-<a target="_blank" href="https://codepen.io/JessWadd/pen/KKeMrWX" class="project-tile">
-  <img class="project-img" src="freshcoasthandmade.thumbnail.JPG" alt="Fresh Coast Handmade Landing Page" style="width:40%">
-</a>
-
-<a target="_blank" href="https://codepen.io/JessWadd/pen/ZEROmbv" class="project-tile">
-  <img class="project-img" src="accessibility.informationpage.JPG" alt="HTML and Accessibility Fundamentals Informational Page" style="width:40%">
-</a>
-
-<a target="_blank" href="https://codepen.io/JessWadd/pen/gOKwPde" class="project-tile">
-  <img class="project-img" src="tributepage.JPG" alt="Jacinda Ardern Tribute Page" style="width:40%">
-</a>
-
+<div class="project-grid">
+<figure class="project-frame"><figcaption>Product Landing Webpage</figcaption>
+  <a target="_blank" href="https://codepen.io/JessWadd/pen/KKeMrWX" class="project-tile"><img class="project-img" src="freshcoasthandmade.thumbnail.JPG" alt="Fresh Coast Handmade Landing Page" width="200"></a>
+</figure>
+<figure class="project-frame"><figcaption>Informational Webpage</figcaption>
+  <a target="_blank" href="https://codepen.io/JessWadd/pen/ZEROmbv" class="project-tile"><img class="project-img" src="accessibility.informationpage.JPG" alt="HTML and Accessibility Fundamentals Informational Page" width="200"></a>
+</figure>
+<figure class="project-frame"><figcaption>Tribute Webpage</figcaption>  
+  <a target="_blank" href="https://codepen.io/JessWadd/pen/gOKwPde" class="project-tile"><img class="project-img" src="tributepage.JPG" alt="Jacinda Ardern Tribute Page" width="200"></a>
+</figure>
+<figure class="project-frame"><figcaption>Survey Webpage</figcaption>
+  <a target="_blank" href="https://codepen.io/JessWadd/pen/RwJGjjw" class="project-tile"><img class="project-img" src="survey.JPG" alt="Vacation Survey" width="200"></a>
+</figure>
 </section>
+</div>
 
 <!-- END WORK-->
 
@@ -106,7 +127,7 @@
   </div>
 
   <div class="social-links">
-    <a href="https://www.freecodecamp.org/JessWaddleQuack" target="_blank" class="social-details">
+    <a href="https://www.freecodecamp.org/JessWaddleQuack" target="_blank" class="social-details" id="profile-link">
     <img src="free-code-camp.svg"> Free Code Camp</a>
   </div>
 
@@ -119,18 +140,28 @@
 <section id="mini-blog" class="mini-blog">
 
   <h2 id="blog-title">Jess learns code: a mini-blog</h2>
-  <p>11/3/22</p>
-  <p>Finished last tutorial in FCC - Responsive Web. Begin creating portfolio. What is github?</p>
-  <p>11/4/22</p>
-  <p>PMP intro training videos. Added thumbnail links to portfolio. Why won't my social media icons show up?</p>
-  <p>11/5/22</p>
-  <p>Organize project files on github and codepen.</p>
-  
+  <div class="chalkboard">
+  <p class="blog-date">11/18/22</p>
+  <p class="blog-entry">Added gradients to elements of portfolio. Why did my webpage stop scrolling? Because <code>overflow: hidden;</code> was applied to the entire body. I'm beginning to understand the planning process more clearly. I finished my first draft of my portfolio webpage and began learning JavaScript.</p>
+  <p class="blog-date">11/13/22</p>
+  <p class="blog-entry">Researched REST API's.</p>
+  <p class="blog-date">11/11/22</p>
+  <p class="blog-entry">Read about CSS best practice and organized stylesheet.</p>
+  <p class="blog-date">11/5/22</p>
+  <p class="blog-entry">Organize project files on github and codepen.</p>
+  <p class="blog-date">11/4/22</p>
+  <p class="blog-entry">PMP intro training videos. Added thumbnail links to portfolio. Why won't my social media icons show up?</p>
+  <p class="blog-date">11/3/22</p>
+  <p class="blog-entry">Finished last tutorial in FCC - Responsive Web. Begin creating portfolio. What is github?</p>
+</div>
+
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER pixel heart by Juan Manuel Corredor from <a href="https://thenounproject.com/browse/icons/term/pixel-heart/" target="_blank" title="pixel heart Icons">Noun Project</a> -->
 
-
+<section id="footer" class="footer">
+  <h2>Let's work together!</h2>
+</section>
 
 <!-- END FOOTER -->
 

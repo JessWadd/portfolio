@@ -1,5 +1,12 @@
-.root {
-
+:root {
+    --face-color: #FFEBCD;
+    --cheek: #ffa8c478;
+    --mouth: #f38a68;
+    --hair-color: #D2B48C;
+    --clothes: #3A3A3A;
+    --glasses: #7c68ee67;
+    --heart: #DC143C;
+    --object-color: #228B22;
 }
 
 * {
@@ -7,33 +14,445 @@
     padding: 0;
 }
 
+/* HEADER */
+
+header {
+    position: fixed;
+    z-index: 10;
+}
+
+#navbar {
+    color: white;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    z-index: 10;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  li {
+    float: left;
+    z-index: 10;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    z-index: 10;
+  }
+  
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: var(--glasses);
+  }
+
+/* MAIN CONTENT */
+
 body {
     background-image: linear-gradient(to bottom right, #C4D7D1, #F5D1C3, #FFB6A3);
     width: 100%;
     font-family: Helvetica, Arial, sans-serif;
+ }
+
+ section {
+    margin-top: 100px;
+    text-align: center;
+ }
+
+#welcome-name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 100px;
 }
 
-#navbar {
-    background-color: #5F9595;
-    color: white;
-    font-family: Tahoma, Geneva, Verdana, sans-serif;
+@media only screen and (max-width: 600px) {
+    #welcome-name {font-size: 60px;}
 }
 
+#welcome-phrase {
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 600px) {
+    #welcome-phrase {font-size: 30px; letter-spacing: 1px;}
+}
+
+#projects {
+    display: flexbox;
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+ /* HAPPY GIRL STYLE LISTED LAST FOR EFFICIENCY */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1.5rem;
+  justify-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.project-frame {
+    padding: .5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: #333;
+    color: #d9d9d9;
+    z-index: 1;
+  }
+  
 .project-img {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: opacity 0.25s ease-in-out;
+    z-index: 2;
   }
   
 .project-img:hover {
-    box-shadow: 0 0 5px 2px rgba(96, 172, 197, 0.64);
+    opacity: .7;
+    z-index: 2;
   }
-  
+
 .social-links {
     width: 10%;
     text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .social-links {display: block; margin: 0 auto;}
 }
 
 .social-links:hover {
     opacity: 0.7;
   }
+
+a {
+    text-decoration: none;
+    color: var(--clothes)
+}
+
+/* CHALKBOARD MINI BLOG */
+
+.chalkboard {
+  background-color: #454545;
+  width: 80%;
+  height: 400px;
+  text-align: center;
+  padding: 1em;
+  border-style: outset;
+  border-color: #6b4a1d;
+  border-width: 15px;
+  overflow-y: scroll;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+p.blog-date, p.blog-entry {
+    font-family: 'Indie Flower', cursive;
+    font-size: 21px;
+    text-align: left;
+    color: white;
+    text-overflow: clip;
+}
+
+p.blog-date {
+    margin-top: 10px;
+}
+
+/* FOOTER */
+
+.footer {
+    margin-bottom: 2em;
+}
+
+/* --- HAPPY GIRL STYLE --- */
+
+.girl {
+    width: 400px;
+    height: 500px;
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+    z-index: 5;
+}
+
+.girl * {
+    position: absolute;
+    display: flex;
+}
+
+.head {
+    width: 150px;
+    height: 160px;
+    background-color: var(--face-color);
+    z-index: 2;
+    left: 30%;
+    border-radius: 80px;
+}
+
+.bangs {
+    width:50%;
+    height: 60%;
+    background-color: var(--hair-color);
+    z-index: 5;
+    top: -2px;
+}
+
+.bangs.left {
+    border-radius: 80px 0 80px 0;
+    background-image: linear-gradient(to bottom right, #FBF6D9, #D2B48C, #D2B48C);
+}
+
+.bangs.right {
+    right: 0;
+    border-radius: 0 80px 0 80px;
+    background-image: linear-gradient(to bottom left, #FBF6D9, #D2B48C, #D2B48C);
+}
+
+.eyes {
+    width: 20%;
+    height: 17%;
+    background-color: rgb(46, 46, 46);
+    top: 50%;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.eyes.right {
+    right: 25%;
+}
+
+.eyes.left {
+    left: 25%;
+}
+
+.eyelid {
+    width: 150%;
+    height: 100%;
+    background-color: var(--face-color);
+    border-radius: 50%;
+    top: 8px;
+    left: -8px;
+}
+
+.glasses {
+    width: 23%;
+    height: 20%;
+    border: 5px solid var(--glasses);
+    border-radius: 40% 40% 50% 50%;
+    z-index: 5;
+    top: 42%;
+}
+
+.glasses.right {
+    right: 20%;
+}
+
+.glasses.left {
+    left: 20%;
+}
+
+.blush {
+    width: 20%;
+    height: 18%;
+    background-color: var(--cheek);
+    background: radial-gradient(#ffa8c478, #FFEBCD);
+    border-radius: 50%;
+    z-index: 5;
+    top: 60%;
+}
+
+.blush.right {
+    right: 5%;
+}
+
+.blush.left {
+    left: 5%;
+}
+
+.mouth {
+    height: 25%;
+    width: 30%;
+    background-color: var(--mouth);
+    border-radius: 50%;
+    z-index: 4;
+    top: 66%;
+    right: 32%;
+}
+
+.smile {
+    height: 25%;
+    width: 35%;
+    background-color: var(--face-color);
+    border-radius: 50%;
+    z-index: 4;
+    top: 63%;
+    right: 32%;
+}
+
+.body {
+    height: 250px;
+    width: 200px;
+    background-color: var(--clothes);
+    background-image: linear-gradient(to right, #3A3A3A, #444444, #3a3a3a);
+    border-radius: 45% 45% 5% 5%;
+    z-index: 1;
+    top: 150px;
+    left: 24%;
+    display: flex;
+}
+
+.leg {
+    height: 80px;
+    width: 25px;
+    background-color: var(--face-color);
+    z-index: 1;
+    top: 250px;
+    border-radius: 20%;
+}
+
+.leg.left {
+    left: 40px;
+}
+
+.leg.right {
+    right: 40px;
+}
+
+.foot {
+    width: 30%;
+    height: 13%;
+    background-color: rgb(46, 46, 46);
+    background-image: linear-gradient(to bottom, #3A3A3A, #444444, #3a3a3a);
+    z-index: 5;
+    top: 320px;
+    border-radius: 80% 30% 25% 45%;
+}
+
+.foot.left {
+    left: 10px;
+}
+
+.foot.right {
+    right: 35px;
+}
+
+/* remove display: none; when transition can be applied (JavaScript) */
+.heart-solid {
+    width: 70%;
+    z-index: 2;
+    top: 20px;
+    left: 28px;
+    display: none;
+}
+
+
+.heart-pixel {
+    width: 75%;
+    z-index: 2;
+    top: 30px;
+    left: 22px;
+}
+
+/* TRANSITION HOVER ---
+.heart-pixel:hover + .laptop {
+    display: block;
+}
+
+.object {
+    width: 250px;
+    height: 100px;
+    z-index: 5;
+    top: 45%;
+    left: 0;
+    display: none;
+}
+
+.paper-head {
+    width: 40px;
+    height: 40px;
+    background-color: var(--object-color);
+    border-radius: 50%;
+}
+
+.paper-head.left {
+    left: 10px;
+}
+
+.paper-head.midleft {
+    left: 75px;
+    top: 25px;
+}
+
+.paper-head.center {
+    left: 155px;
+    top: 40px;
+}
+
+.paper-head.midright {
+    left: 225px;
+    top: 25px;
+}
+
+.paper-head.right {
+    left: 310px;
+}
+
+.paper-body {
+    border-right: 25px solid transparent;
+    border-left: 25px solid transparent;
+    border-bottom: 50px solid var(--object-color);
+    border-radius: 10%;
+}
+
+.paper-body.left{
+    top: 30px;
+    left: -17px;
+    transform: rotate(40deg);
+}
+
+.paper-body.midleft {
+    top: 60px;
+    left: 55px;
+    transform: rotate(20deg);
+}
+
+.paper-body.center {
+    top: 75px;
+    left: 151px;
+}
+
+.paper-body.midright {
+    top: 60px;
+    left: 235px;
+    transform: rotate(340deg);
+}
+
+.paper-body.right {
+    top: 30px;
+    left: 330px;
+    transform: rotate(320deg);
+}
+--- */
